@@ -1,0 +1,91 @@
+body{
+    margin:0;
+    padding:0;
+    background: #f5f5f5;
+}
+
+.header{
+    background-color:#006bff75;
+    height:150px;
+}
+.header .logobox{
+    display: flex;
+    justify-content: center;
+}
+.header .logobox h1{
+    color:white;
+    font-family: Helvetica, serif;
+    font-size: 60px;
+    text-align: center;
+    text-shadow:2px 2px 5px#868585;
+}
+
+.btn-group{
+    margin:8px 10px;
+}
+.btn-group embed{
+    height:25px;
+}
+.icon{
+    padding:8px;
+    float:left;
+}
+.cmp-all,.clr-cmp{
+    float:right;
+    padding:8px;
+    border-radius:5px;
+}
+.cmp-all:hover,.clr-cmp:hover{
+    background-color:#dddcdc
+}
+span>embed,span>span{
+    vertical-align:middle;
+}
+
+.none{
+    text-align:center;
+}
+.main-hint{
+    font-size:18px;
+}
+.sub-hint{
+    font-size:15px;
+    color:#868585
+}
+
+.input-list{
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    text-align:center;
+    display:none;
+}
+.input-list button{
+    background-color:#006bff75;
+    border-color: #006bff75;
+    border-radius:40px;
+    width: 80px;
+    height: 80px;
+    box-shadow:3px,3px,5px#868585
+
+}
+.input-list button embed{
+    width:30px;
+}
+
+.input-box{
+    width:100%;
+    position:fixed;
+    bottom:0px;
+    text-align:center;
+    background-color: white;
+    border-radius:10px;
+}
+.input-box input[type="text"]{
+    width:90%;
+    height:50px;
+    margin:10px;
+    border:none;
+    outline:none;
+    caret-color:blue
+}

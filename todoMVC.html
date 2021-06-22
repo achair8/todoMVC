@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+      name="viewport"/>
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>Document</title>
+    <link rel="stylesheet" href="todoMVC.css" />
+  </head>
+  <body>
+    <div class="app">
+      <!--头部LOGO-->
+      <div class="header">
+        <div class="logobox">
+          <h1>TODO</h1>
+        </div>
+      </div>
+      <!--筛选按钮组-->
+      <div class="btn-group">
+        <span class="icon">
+          <embed src="assets/list.svg" />
+          <span>清单</span>
+        </span>
+        <span class="cmp-all">
+            <embed src="assets/complete.svg" />
+            <span>全部完成</span>
+        </span>
+        <span class="clr-cmp">
+            <embed src="assets/del.svg" />
+            <span>删除已完成</span>
+        </span>
+      </div>
+      <!--清单列表-->
+      <div class="list">
+        <div class="none">
+          <img src="assets/none.png"/>
+          <div class="main-hint">这里空空如也，快去添加自己的待办事件</div>
+          <div class="sub-hint">点击+按钮添加待办事件</div>
+        </div>
+        <ul id="todo-list"></ul>
+      </div>
+
+      <!--添加列表-->
+      <div class="input-list">
+        <button><embed src="assets/add.svg"></button>
+      </div>
+
+      <!--添加框-->
+      <div class="input-box">
+        <input type="text" placeholder="准备做什么？"/>
+      </div>
+    </div>
+    <script type="text/javascript" src="todoMVC.js"></script>
+  </body>
+</html>
