@@ -31,13 +31,14 @@ body{
 .icon{
     padding:8px;
     float:left;
+    border-radius:5px;
 }
 .cmp-all,.clr-cmp{
     float:right;
     padding:8px;
     border-radius:5px;
 }
-.cmp-all:hover,.clr-cmp:hover{
+.cmp-all:hover,.clr-cmp:hover,.icon:hover{
     background-color:#dddcdc
 }
 span>embed,span>span{
@@ -193,6 +194,7 @@ ul{
     border-color:#006bff75;
     border-radius:10px;
     font-size:15px;
+    outline:none;
     box-shadow:2px 2px 5px#868585;
 }
 .list{

@@ -7,7 +7,7 @@
       name="viewport"
     />
     <meta name="apple-mobile-web-app-capable" content="yes" />
-    <title>Document</title>
+    <title>TodoMVC</title>
     <link rel="stylesheet" href="todoMVC.css" />
   </head>
   <body>
@@ -85,7 +85,11 @@
       <div class="filter">
         <hr>
         <span class="list-num">剩余：2</span>
-        <button class="sort-level">按优先级排序</button>
+        <select class="sort-level">
+          <option value="">请选择排序方式</option>
+          <option value="">按优先级排序</option>
+          <option value="notcmp">按时间排序</option>
+        </select>
         <select class="is-cmp">
           <option value="all">全部</option>
           <option value="notcmp">未完成</option>
