@@ -2,6 +2,7 @@ body{
     margin:0;
     padding:0;
     background: #f5f5f5;
+    
 }
 
 .header{
@@ -22,6 +23,7 @@ body{
 
 .btn-group{
     margin:8px 10px;
+    height:40px;
 }
 .btn-group embed{
     height:25px;
@@ -44,6 +46,7 @@ span>embed,span>span{
 
 .none{
     text-align:center;
+    display:none;
 }
 .main-hint{
     font-size:18px;
@@ -58,7 +61,6 @@ span>embed,span>span{
     bottom:20px;
     right:20px;
     text-align:center;
-    display:none;
 }
 .input-list button{
     background-color:#006bff75;
@@ -66,7 +68,7 @@ span>embed,span>span{
     border-radius:40px;
     width: 80px;
     height: 80px;
-    box-shadow:3px,3px,5px#868585
+    box-shadow:3px 3px 5px #868585
 
 }
 .input-list button embed{
@@ -80,12 +82,120 @@ span>embed,span>span{
     text-align:center;
     background-color: white;
     border-radius:10px;
+    display:none;
 }
 .input-box input[type="text"]{
     width:90%;
     height:50px;
-    margin:10px;
+    margin:10px 10px 0;
     border:none;
     outline:none;
-    caret-color:blue
+    caret-color:blue;
+    font-size:18px;
+}
+.input-group{
+    height:50px;
+    width:90%;
+    margin:0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.input-group input{
+    line-height: 15px;
+    outline:none;
+    font-size:15px;
+}
+.input-group select{
+    height:25px;
+    outline:none;
+    font-size:15px;
+}
+.submit button{
+    background-color: white;
+    border:none;
+}
+input[type="submit"]{
+    background-color:#006bff75;
+    height:30px;
+    color:white;
+    border-color:#006bff75;
+    border-radius:10px;
+    font-size:18px;
+    box-shadow:2px 2px 5px#868585;
+}
+ul{
+    list-style:none;
+    margin: 0;
+    padding: 0;
+}
+
+#todo-list li{
+    font-size: 18px;
+    position:relative;
+    height:40px;
+    padding:5px;
+}
+#todo-list li:hover{
+    background-color:#dddcdc;
+}
+.view .toggle{
+    margin: auto 5px;  
+    zoom:180%;
+    vertical-align:-webkit-baseline-middle;
+}
+.todo-label{
+    vertical-align: -webkit-baseline-middle;
+}
+.todo-level{
+    color:blue;
+    vertical-align: -webkit-baseline-middle;
+}
+.datetime{
+    vertical-align:-webkit-baseline-middle;
+    position:absolute;
+    right:5px;
+    font-size:15px;
+    text-align: center;
+}
+.time{
+    font-size:13px;
+}
+
+.filter {
+    color: #777;
+    height: 30px;
+    text-align: center;
+}
+.list-num {
+    float:left;
+    height:25px;
+    margin-left:10px;
+}
+
+.is-cmp{
+    float:right;
+    background-color:#006bff75;
+    height:25px;
+    color:white;
+    border-color:#006bff75;
+    border-radius:10px;
+    font-size:15px;
+    box-shadow:2px 2px 5px#868585;
+    outline:none;
+    margin-right:10px;
+}
+.sort-level{
+    float:right;
+    background-color:#006bff75;
+    height:25px;
+    color:white;
+    border-color:#006bff75;
+    border-radius:10px;
+    font-size:15px;
+    box-shadow:2px 2px 5px#868585;
+}
+.list{
+    overflow:auto;
+    height:350px;
 }

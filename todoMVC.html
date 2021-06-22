@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta
       content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
-      name="viewport"/>
+      name="viewport"
+    />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <title>Document</title>
     <link rel="stylesheet" href="todoMVC.css" />
@@ -24,34 +25,96 @@
           <span>清单</span>
         </span>
         <span class="cmp-all">
-            <embed src="assets/complete.svg" />
-            <span>全部完成</span>
+          <embed src="assets/complete.svg" />
+          <span>全部完成</span>
         </span>
         <span class="clr-cmp">
-            <embed src="assets/del.svg" />
-            <span>删除已完成</span>
+          <embed src="assets/del.svg" />
+          <span>删除已完成</span>
         </span>
       </div>
+      <hr />
       <!--清单列表-->
       <div class="list">
         <div class="none">
-          <img src="assets/none.png"/>
+          <img src="assets/none.png" />
           <div class="main-hint">这里空空如也，快去添加自己的待办事件</div>
           <div class="sub-hint">点击+按钮添加待办事件</div>
         </div>
-        <ul id="todo-list"></ul>
+        <ul id="todo-list">
+          <li>
+            <div class="view">
+              <input class="toggle" type="checkbox" />
+              <label class="todo-label"></label>
+              <span class="todo-level">!</span>
+              <span class="datetime">
+                <span class="date">2021-06-22</span>
+                <br/>
+                <span class="time">21:33</span>
+              </span>
+ 
+            </div>
+          </li>
+          <li>
+            <div class="view">
+              <input class="toggle" type="checkbox" />
+              <label class="todo-label">完成脚本作业</label>
+              <span class="todo-level">!</span>
+              <span class="datetime">
+                <span class="date">2021-06-22</span>
+                <br/>
+                <span class="time">21:33</span>
+              </span>
+            </div>
+          </li>
+          <li>
+            <div class="view">
+              <input class="toggle" type="checkbox" />
+              <label class="todo-label">完成脚本作业</label>
+              <span class="todo-level">!</span>
+              <span class="datetime">
+                <span class="date">2021-06-22</span>
+                <br/>
+                <span class="time">21:33</span>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+      <!--筛选按钮及剩余个数-->
+      <div class="filter">
+        <hr>
+        <span class="list-num">剩余：2</span>
+        <button class="sort-level">按优先级排序</button>
+        <select class="is-cmp">
+          <option value="all">全部</option>
+          <option value="notcmp">未完成</option>
+          <option value="cmp">已完成</option>
+        </select>
+        
       </div>
 
-      <!--添加列表-->
+      <!--添加按钮-->
       <div class="input-list">
-        <button><embed src="assets/add.svg"></button>
+        <button><embed src="assets/add.svg" /></button>
       </div>
 
       <!--添加框-->
-      <div class="input-box">
-        <input type="text" placeholder="准备做什么？"/>
-      </div>
+      <form class="input-box">
+        <input type="text" placeholder="准备做什么？" required />
+        <div class="input-group">
+          <input type="date" />
+          <input type="time" />
+          <select>
+            <option value="low">低优先级</option>
+            <option value="middle">中优先级</option>
+            <option value="high">高优先级</option>
+          </select>
+          <input type="submit" value="添加" />
+        </div>
+      </form>
     </div>
+      </div>
     <script type="text/javascript" src="todoMVC.js"></script>
   </body>
 </html>
