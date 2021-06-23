@@ -42,53 +42,16 @@
           <div class="sub-hint">点击+按钮添加待办事件</div>
         </div>
         <ul id="todo-list">
-          <li>
-            <div class="view">
-              <input class="toggle" type="checkbox" />
-              <label class="todo-label"></label>
-              <span class="todo-level">!</span>
-              <span class="datetime">
-                <span class="date">2021-06-22</span>
-                <br/>
-                <span class="time">21:33</span>
-              </span>
- 
-            </div>
-          </li>
-          <li>
-            <div class="view">
-              <input class="toggle" type="checkbox" />
-              <label class="todo-label">完成脚本作业</label>
-              <span class="todo-level">!</span>
-              <span class="datetime">
-                <span class="date">2021-06-22</span>
-                <br/>
-                <span class="time">21:33</span>
-              </span>
-            </div>
-          </li>
-          <li>
-            <div class="view">
-              <input class="toggle" type="checkbox" />
-              <label class="todo-label">完成脚本作业</label>
-              <span class="todo-level">!</span>
-              <span class="datetime">
-                <span class="date">2021-06-22</span>
-                <br/>
-                <span class="time">21:33</span>
-              </span>
-            </div>
-          </li>
         </ul>
       </div>
       <!--筛选按钮及剩余个数-->
       <div class="filter">
         <hr>
-        <span class="list-num">剩余：2</span>
+        <span class="list-num">剩余：0</span>
         <select class="sort-level">
-          <option value="">请选择排序方式</option>
-          <option value="">按优先级排序</option>
-          <option value="notcmp">按时间排序</option>
+          <option value="no">按添加时间排序</option>
+          <option value="level-fst">按优先级排序</option>
+          <option value="time-fst">按时间排序</option>
         </select>
         <select class="is-cmp">
           <option value="all">全部</option>
@@ -100,25 +63,27 @@
 
       <!--添加按钮-->
       <div class="input-list">
-        <button><embed src="assets/add.svg" /></button>
+        <button class="input-btn">+</button>
       </div>
 
       <!--添加框-->
       <form class="input-box">
-        <input type="text" placeholder="准备做什么？" required />
+        <input class="input-text" type="text" placeholder="准备做什么？" required />
         <div class="input-group">
-          <input type="date" />
-          <input type="time" />
-          <select>
+          <input class="input-date" type="date" />
+          <input class="input-time" type="time" />
+          <select class="input-level">
             <option value="low">低优先级</option>
             <option value="middle">中优先级</option>
             <option value="high">高优先级</option>
           </select>
-          <input type="submit" value="添加" />
+          <input class="submit" type="submit" value="添加" />
         </div>
       </form>
     </div>
       </div>
     <script type="text/javascript" src="todoMVC.js"></script>
+    <script type="text/javascript" src="model.js"></script>
+    <script type="text/javascript" src="store.js"></script>
   </body>
 </html>

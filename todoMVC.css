@@ -7,7 +7,7 @@ body{
 
 .header{
     background-color:#006bff75;
-    height:150px;
+    height:20vh;
 }
 .header .logobox{
     display: flex;
@@ -23,7 +23,7 @@ body{
 
 .btn-group{
     margin:8px 10px;
-    height:40px;
+    height:5vh;
 }
 .btn-group embed{
     height:25px;
@@ -96,7 +96,7 @@ span>embed,span>span{
 }
 .input-group{
     height:50px;
-    width:90%;
+    width:95%;
     margin:0 auto;
     display: flex;
     justify-content: space-between;
@@ -108,7 +108,7 @@ span>embed,span>span{
     font-size:15px;
 }
 .input-group select{
-    height:25px;
+    height:23px;
     outline:none;
     font-size:15px;
 }
@@ -137,6 +137,10 @@ ul{
     height:40px;
     padding:5px;
 }
+#todo-list li .completed label{
+    color:#d9d9d9;
+    text-decoration: line-through;
+}
 #todo-list li:hover{
     background-color:#dddcdc;
 }
@@ -144,6 +148,13 @@ ul{
     margin: auto 5px;  
     zoom:180%;
     vertical-align:-webkit-baseline-middle;
+}
+.edit{
+    vertical-align:-webkit-baseline-middle;
+    width:55%;
+    height:30px;
+    font-size:18px;
+    display:none;
 }
 .todo-label{
     vertical-align: -webkit-baseline-middle;
@@ -199,5 +210,10 @@ ul{
 }
 .list{
     overflow:auto;
-    height:350px;
+    height:50vh;
+}
+
+.input-btn{
+    font-size:50px;
+    color:white;
 }
