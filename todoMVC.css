@@ -154,6 +154,7 @@ ul{
     height:5.5vh;
     padding:5px;
     -webkit-transform: translateX(0px);
+    transform: translateX(0px);
 }
 #todo-list li.completed label{
     color:#d9d9d9;
