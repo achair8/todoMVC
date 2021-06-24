@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="todoMVC.css" />
   </head>
   <body>
+    <!--遮盖层-->
+    <div id="cover"></div>
+
     <div class="app">
       <!--头部LOGO-->
       <div class="header">
@@ -58,7 +61,6 @@
           <option value="notcmp">未完成</option>
           <option value="cmp">已完成</option>
         </select>
-        
       </div>
 
       <!--添加按钮-->
@@ -71,14 +73,16 @@
         <input class="input-text" type="text" placeholder="准备做什么？" required />
         <div class="input-group">
           <input class="input-date" type="date" />
-          <input class="input-time" type="time" />
+          <input class="input-time" type="time" />      
+        </div>
+        <div class="level-submit">
           <select class="input-level">
             <option value="low">低优先级</option>
             <option value="middle">中优先级</option>
             <option value="high">高优先级</option>
           </select>
           <input class="submit" type="submit" value="添加" />
-        </div>
+        </div>   
       </form>
     </div>
       </div>

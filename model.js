@@ -6,6 +6,7 @@ window.model = {
       filter: 'all',
       sort:"no",
       number:0,
+      cmpall:1,//表示目前的按键状态 1表示全部完成
     },
     TOKEN: 'TodoMVC'
   };

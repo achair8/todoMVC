@@ -2,9 +2,18 @@ body{
     margin:0;
     padding:0;
     background: #f5f5f5;
-    
 }
-
+#cover{
+    background: #000; 
+    position: absolute; 
+    left: 0px; 
+    top: 0px; 
+    width: 100%; 
+    filter: alpha(opacity=30); 
+    opacity: 0.3; 
+    display: none; 
+    z-index: 2 "
+}
 .header{
     background-color:#006bff75;
     height:20vh;
@@ -77,40 +86,46 @@ span>embed,span>span{
 }
 
 .input-box{
-    width:100%;
-    position:fixed;
-    bottom:0px;
+    position: absolute;
+    position: absolute;
+    left: 10%;
+    top: 35%;
+    width: 80%;
+    height: 30%;
     text-align:center;
     background-color: white;
-    border-radius:10px;
+    border-radius:20px;
     display:none;
 }
 .input-box input[type="text"]{
-    width:90%;
-    height:50px;
+    width:80%;
+    height:50%;
     margin:10px 10px 0;
     border:none;
     outline:none;
     caret-color:blue;
     font-size:18px;
 }
-.input-group{
+.input-group,.level-submit{
     height:50px;
     width:95%;
     margin:0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
 }
 .input-group input{
     line-height: 15px;
     outline:none;
     font-size:15px;
+    border:none;
 }
-.input-group select{
-    height:23px;
+.level-submit select{
+    display: flex;
+    height:30px;
     outline:none;
     font-size:15px;
+    border:none;
 }
 .submit button{
     background-color: white;
@@ -119,6 +134,7 @@ span>embed,span>span{
 input[type="submit"]{
     background-color:#006bff75;
     height:30px;
+    width:60px;
     color:white;
     border-color:#006bff75;
     border-radius:10px;
@@ -136,8 +152,9 @@ ul{
     position:relative;
     height:40px;
     padding:5px;
+    -webkit-transform: translateX(0px);
 }
-#todo-list li .completed label{
+#todo-list li.completed label{
     color:#d9d9d9;
     text-decoration: line-through;
 }
@@ -209,11 +226,36 @@ ul{
     box-shadow:2px 2px 5px#868585;
 }
 .list{
-    overflow:auto;
+    overflow-y:auto;
+    overflow-x:hidden;
     height:50vh;
 }
 
 .input-btn{
     font-size:50px;
     color:white;
+}
+.del-btn{
+    position: absolute;
+    top: 0;
+    width:80px;
+    height:100%;
+    right: -80px;
+    background: #ffae00;
+}
+.cmp-btn{
+    position: absolute;
+    top: 0;
+    width:80px;
+    height:100%;
+    left: -80px;
+    background: #05df849c;
+}
+.del-btn embed{
+    height:25px;
+    margin:10px 0 10px 5px;
+}
+.cmp-btn embed{
+    height:25px;
+    margin:10px 5px 10px 0;
 }
