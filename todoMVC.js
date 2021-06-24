@@ -37,11 +37,11 @@ function update() {
         none.style.display = 'none';
     }
     //更改键位的显示
-    var cmp_all=$('.cmp-all');
-    if(data.cmpall)
-    cmp_all.querySelector('span').innerHTML="全部完成";
-    else 
-    cmp_all.querySelector('span').innerHTML="全部取消";
+    var cmp_all = $('.cmp-all');
+    if (data.cmpall)
+        cmp_all.querySelector('span').innerHTML = "全部完成";
+    else
+        cmp_all.querySelector('span').innerHTML = "全部取消";
     //对数据进行排序
     if (data.sort == 'no')//根据添加时间排序
         data.items.sort(sortArr('id'));
@@ -132,63 +132,73 @@ function update() {
                 }
             }, false);
             //给checkbox绑定事件
-            var checkbox=element.querySelector('.toggle');
-            checkbox.addEventListener('touchstart',function(ev){
+            var checkbox = element.querySelector('.toggle');
+            checkbox.addEventListener('touchstart', function (ev) {
                 ev.stopPropagation();
-                item.cmp=!item.cmp;
+                item.cmp = !item.cmp;
                 update();
-            },false);
+            }, false);
             //绑定touch事件，左滑删除
             var initX;
             var moveX;
-            var x=0;
-            var objX=0;
-            element.addEventListener('touchstart',function(ev){
+            var x = 0;
+            var objX = 0;
+            element.addEventListener('touchstart', function (ev) {
                 ev.preventDefault();
-                initX=ev.targetTouches[0].pageX;
+                initX = ev.targetTouches[0].pageX;
                 objX = (element.style.WebkitTransform.replace(/translateX\(/g, "").replace(/px\)/g, "")) * 1;
-                if(objX==0){
-                    console.log(0)
-                    element.addEventListener('touchmove',function(ev){
+                if (objX == 0) {
+                    element.addEventListener('touchmove', function (ev) {
                         ev.preventDefault();
-                        moveX=ev.targetTouches[0].pageX;
-                        x=moveX-initX;
-                        if(x>=0){
-                            element.style.WebkitTransform = "translateX(" + 0 + "px)";
+                        moveX = ev.targetTouches[0].pageX;
+                        x = moveX - initX;
+                        var l = Math.abs(x);
+                        if (x >= 0) {//右滑
+                            element.style.WebkitTransform = "translateX(" + l + "px)";
+                            if (l > 300) {
+                                l = 300;
+                                element.style.WebkitTransform = "translateX(" + l + "px)";
+                            }
                         }
-                        else if(x<0){
-                            var l=Math.abs(x);
+                        else if (x < 0) {//左滑
                             element.style.WebkitTransform = "translateX(" + -l + "px)";
-                            if(l>80){
-                                l=80;
+                            if (l > 300) {
+                                l = 300;
                                 element.style.WebkitTransform = "translateX(" + -l + "px)";
                             }
-                        }                       
+                        }
                     });
                 }
-            },false);
-            element.addEventListener('touchend', function(event) {
+            }, false);
+            element.addEventListener('touchend', function (event) {
                 event.preventDefault();
-                  objX = (element.style.WebkitTransform.replace(/translateX\(/g, "").replace(/px\)/g, "")) * 1;
-                  if (objX > -40) {
+                objX = (element.style.WebkitTransform.replace(/translateX\(/g, "").replace(/px\)/g, "")) * 1;
+                if (objX > -80 && objX < 80) {//没有触发任何事件
                     element.style.WebkitTransform = "translateX(" + 0 + "px)";
                     objX = 0;
-                  } else {
-                    element.style.WebkitTransform = "translateX(" + -80 + "px)";
-                    objX = -80;
-                  }
-              })
+                } else if (objX <= -80) {//触发删除
+                    data.items.splice(index, 1);
+                    element.style.WebkitTransform = "translateX(" + -300 + "px)";
+                    update();
+                }
+                else {//触发完成
+                    item.cmp = 1;
+                    element.style.WebkitTransform = "translateX(" + 300 + "px)";
+                    update();
+                }
+            })
             todo_list.insertBefore(element, todo_list.firstChild);
         }
-        //修改未完成数
-        var list_num = $('.list-num');
-        list_num.innerHTML = "剩余：" + active_num;
-        //修改筛选和排序选项
-        var is_cmp = $('.is-cmp');
-        is_cmp.value = data.filter;
-        var sort_level = $('.sort-level');
-        sort_level = data.sort;
-    })
+
+    });
+    //修改未完成数
+    var list_num = $('.list-num');
+    list_num.innerHTML = "剩余：" + active_num;
+    //修改筛选和排序选项
+    var is_cmp = $('.is-cmp');
+    is_cmp.value = data.filter;
+    var sort_level = $('.sort-level');
+    sort_level = data.sort;
 }
 //加载页面
 window.onload = function () {
@@ -261,6 +271,7 @@ window.onload = function () {
                 datetime: input_date + '-' + input_time, date: input_date, time: input_time, level: level_num
             });
             data.number++;
+            data.cmpall = 1;
             update();
         }, false);
         //给输入控件绑定submit事件
@@ -278,6 +289,7 @@ window.onload = function () {
                     datetime: input_date + ' ' + input_time, date: input_date, time: input_time, level: level_num
                 });
                 data.number++;
+                data.cmpall = 1;
                 update();
             }
         }, false);
@@ -297,10 +309,10 @@ window.onload = function () {
         var cmp_all = $('.cmp-all');
         cmp_all.addEventListener('click', function (ev) {
             data.items.forEach(function (item) {
-                if(data.cmpall)item.cmp = true;
-                else item.cmp=false;               
+                if (data.cmpall) item.cmp = true;
+                else item.cmp = false;
             });
-            data.cmpall=!data.cmpall;
+            data.cmpall = !data.cmpall;
             update();
         }, false);
         //给删除已完成按钮绑定事件

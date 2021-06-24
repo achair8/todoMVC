@@ -6,8 +6,8 @@ body{
 #cover{
     background: #000; 
     position: absolute; 
-    left: 0px; 
-    top: 0px; 
+    left: 0; 
+    top: 0; 
     width: 100%; 
     filter: alpha(opacity=30); 
     opacity: 0.3; 
@@ -16,7 +16,7 @@ body{
 }
 .header{
     background-color:#006bff75;
-    height:20vh;
+    height:18vh;
 }
 .header .logobox{
     display: flex;
@@ -25,26 +25,26 @@ body{
 .header .logobox h1{
     color:white;
     font-family: Helvetica, serif;
-    font-size: 60px;
+    font-size: 8vh;
     text-align: center;
     text-shadow:2px 2px 5px#868585;
 }
 
 .btn-group{
-    margin:8px 10px;
+    margin:1vh 1.4vh;
     height:5vh;
 }
 .btn-group embed{
-    height:25px;
+    height:3.4vh;
 }
 .icon{
-    padding:8px;
+    padding:1vh;
     float:left;
     border-radius:5px;
 }
 .cmp-all,.clr-cmp{
     float:right;
-    padding:8px;
+    padding:1vh;
     border-radius:5px;
 }
 .cmp-all:hover,.clr-cmp:hover,.icon:hover{
@@ -52,6 +52,7 @@ body{
 }
 span>embed,span>span{
     vertical-align:middle;
+    font-size:2vh;
 }
 
 .none{
@@ -59,30 +60,30 @@ span>embed,span>span{
     display:none;
 }
 .main-hint{
-    font-size:18px;
+    font-size:2.4vh;
 }
 .sub-hint{
-    font-size:15px;
+    font-size:2vh;
     color:#868585
 }
 
 .input-list{
     position:fixed;
-    bottom:20px;
-    right:20px;
+    bottom:2.7vh;
+    right:2.7vh;
     text-align:center;
 }
 .input-list button{
     background-color:#006bff75;
     border-color: #006bff75;
-    border-radius:40px;
-    width: 80px;
-    height: 80px;
+    border-radius:5.4vh;
+    width: 10.8vh;
+    height: 10.8vh;
     box-shadow:3px 3px 5px #868585
 
 }
 .input-list button embed{
-    width:30px;
+    width:20%;
 }
 
 .input-box{
@@ -100,14 +101,14 @@ span>embed,span>span{
 .input-box input[type="text"]{
     width:80%;
     height:50%;
-    margin:10px 10px 0;
+    padding:10px 10px 0;
     border:none;
     outline:none;
     caret-color:blue;
-    font-size:18px;
+    font-size: 2.5vh;
 }
 .input-group,.level-submit{
-    height:50px;
+    height:6.8vh;
     width:95%;
     margin:0 auto;
     display: flex;
@@ -115,16 +116,16 @@ span>embed,span>span{
     align-items: center;
 }
 .input-group input{
-    line-height: 15px;
+    line-height: 2vh;
     outline:none;
-    font-size:15px;
+    font-size:2vh;
     border:none;
 }
 .level-submit select{
     display: flex;
-    height:30px;
+    height:4vh;
     outline:none;
-    font-size:15px;
+    font-size:2vh;
     border:none;
 }
 .submit button{
@@ -133,12 +134,12 @@ span>embed,span>span{
 }
 input[type="submit"]{
     background-color:#006bff75;
-    height:30px;
-    width:60px;
+    height:4.2vh;
+    width:25%;
     color:white;
     border-color:#006bff75;
     border-radius:10px;
-    font-size:18px;
+    font-size:2.5vh;
     box-shadow:2px 2px 5px#868585;
 }
 ul{
@@ -148,9 +149,9 @@ ul{
 }
 
 #todo-list li{
-    font-size: 18px;
+    font-size: 2.5vh;
     position:relative;
-    height:40px;
+    height:5.5vh;
     padding:5px;
     -webkit-transform: translateX(0px);
 }
@@ -169,8 +170,8 @@ ul{
 .edit{
     vertical-align:-webkit-baseline-middle;
     width:55%;
-    height:30px;
-    font-size:18px;
+    height:4vh;
+    font-size:2.5vh;
     display:none;
 }
 .todo-label{
@@ -184,32 +185,33 @@ ul{
     vertical-align:-webkit-baseline-middle;
     position:absolute;
     right:5px;
-    font-size:15px;
+    font-size:2vh;
     text-align: center;
 }
 .time{
-    font-size:13px;
+    font-size:1.8vh;
 }
 
 .filter {
     color: #777;
-    height: 30px;
+    height: 4vh;
     text-align: center;
 }
 .list-num {
     float:left;
-    height:25px;
+    height:3.4vh;
     margin-left:10px;
+    font-size:2vh;
 }
 
 .is-cmp{
     float:right;
     background-color:#006bff75;
-    height:25px;
+    height:3.4vh;
     color:white;
     border-color:#006bff75;
     border-radius:10px;
-    font-size:15px;
+    font-size:2vh;
     box-shadow:2px 2px 5px#868585;
     outline:none;
     margin-right:10px;
@@ -217,11 +219,11 @@ ul{
 .sort-level{
     float:right;
     background-color:#006bff75;
-    height:25px;
+    height:3.4vh;
     color:white;
     border-color:#006bff75;
     border-radius:10px;
-    font-size:15px;
+    font-size:2vh;
     outline:none;
     box-shadow:2px 2px 5px#868585;
 }
@@ -232,30 +234,31 @@ ul{
 }
 
 .input-btn{
-    font-size:50px;
+    font-size:6.8vh;
     color:white;
 }
 .del-btn{
     position: absolute;
     top: 0;
-    width:80px;
+    width:300px;
     height:100%;
-    right: -80px;
+    right: -300px;
     background: #ffae00;
 }
 .cmp-btn{
     position: absolute;
     top: 0;
-    width:80px;
+    width:300px;
     height:100%;
-    left: -80px;
+    left: -300px;
     background: #05df849c;
 }
 .del-btn embed{
-    height:25px;
+    height:3.4vh;
     margin:10px 0 10px 5px;
 }
 .cmp-btn embed{
-    height:25px;
+    height:3.4vh;
+    float:right;
     margin:10px 5px 10px 0;
 }
