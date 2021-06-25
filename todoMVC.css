@@ -47,7 +47,7 @@ body{
     padding:1vh;
     border-radius:5px;
 }
-.cmp-all:hover,.clr-cmp:hover,.icon:hover{
+.cmp-all:active,.clr-cmp:active,.icon:active{
     background-color:#dddcdc
 }
 span>embed,span>span{
@@ -160,8 +160,8 @@ ul{
     color:#d9d9d9;
     text-decoration: line-through;
 }
-#todo-list li:hover{
-    background-color:#dddcdc;
+#todo-list li:active{
+    background-color:#c2c0c0;
 }
 .view .toggle{
     margin: auto 5px;  

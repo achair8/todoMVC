@@ -279,8 +279,7 @@ window.onload = function () {
                     i = 1;
                 }, 800);
                 update();
-            }
-           
+            } 
         }, false);
         //给输入控件绑定submit事件
         var submit = $('.submit');
