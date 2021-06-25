@@ -254,25 +254,33 @@ window.onload = function () {
         }, false);
         //给输入控件绑定键盘事件
         var text = $('.input-text');
+        var i=0;//防止频繁点击
         text.addEventListener('keyup', function (ev) {
-            if (ev.keyCode != 13) return; // Enter
-            if (text.value == '') {
-                console.warn('输入不得为空！');
-                return;
+            if(i){
+                if (ev.keyCode != 13) return; // Enter
+                i=0;
+                if (text.value == '') {
+                    console.warn('输入不得为空！');
+                    return;
+                }
+                var input_date = $('.input-date').value;
+                var input_time = $('.input-time').value;
+                var input_level = $('.input-level');
+                var level_num = 2;
+                if (input_level.value == 'low') level_num = 0;
+                else if (input_level.value == 'middle') level_num = 1;
+                data.items.push({
+                    id: data.number, msg: text.value, cmp: false,
+                    datetime: input_date + '-' + input_time, date: input_date, time: input_time, level: level_num
+                });
+                data.number++;
+                data.cmpall = 1;
+                setTimeout(function () {
+                    i = 1;
+                }, 800);
+                update();
             }
-            var input_date = $('.input-date').value;
-            var input_time = $('.input-time').value;
-            var input_level = $('.input-level');
-            var level_num = 2;
-            if (input_level.value == 'low') level_num = 0;
-            else if (input_level.value == 'middle') level_num = 1;
-            data.items.push({
-                id: data.number, msg: text.value, cmp: false,
-                datetime: input_date + '-' + input_time, date: input_date, time: input_time, level: level_num
-            });
-            data.number++;
-            data.cmpall = 1;
-            update();
+           
         }, false);
         //给输入控件绑定submit事件
         var submit = $('.submit');
